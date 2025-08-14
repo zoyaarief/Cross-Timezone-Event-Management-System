@@ -95,23 +95,6 @@ Contributors:
 - Siddhant Narode  
 - Zoya Arief
 
-**Author contributions**
-
-- Design : Zoya and Siddhant
-- controller
-	- Edit commands: Zoya 
-	- Create commands : Siddhant 
-	- Print command : Siddhant
-- model
-  - Edit commands : Zoya
-  - Create commands: Siddhant
-  - Print command: Siddhant 
-- view
-- controller test : Zoya
-- model test: Siddhant
-- view test: Siddhant
-- Integration test : Zoya 
-
 
 
 
