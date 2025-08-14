@@ -1,0 +1,77 @@
+
+create calendar --name one --timezone America/New_York
+create calendar --namey two --timezone America/Los_Angeles
+create calendar --name two --timezone America/Los_Angeles
+
+use calendar --name ten
+use calendar --name one
+create event office-hours-cs5010 from 2024-03-11T30:00 to 2024-03-11T12:00
+create event office-hours-cs5010 from 2024-03-11T30:00 to 2024-03-09T12:00
+create event office-hours-cs5010 from 2024-03-11T10:00 to 2024-03-11T12:00
+create event pdp-class from 2024-03-13T13:00 to 2024-03-14T14:00
+create event recitation from 2024-03-16T11:00 to 2024-03-18T12:30
+
+use calendar --name two
+create event office-hours-cs5200 from 2024-03-11T15:00 to 2024-03-11T15:30
+create event dbms-class from 2024-03-13T13:00 to 2024-03-14T14:00
+create event recitation from 2024-03-16T11:00 to 2024-03-18T12:30
+
+copy events on 2024-03-11 --target sixteen to 2021-03-11
+copy events on 2024-03-11 --target one to 20234-03-11
+copy events on 2024-03-11 --target one to 2021-03-11
+
+use calendar --name one
+print events on 2021-03-99
+print events on 2021-03-11
+print events from 2024-03-11T00:00 to 2024-03-18T28:59
+print events from 2024-03-11T00:00 to 2024-03-18T23:59
+
+
+use calendar --name two
+edit calendar --name one --property danceparty Europe/Paris
+edit calendar --name one --property timezone Europe/Paris
+print events on 2021-03-11
+
+edit calendar --what two --property name three
+edit calendar --name two --property name three
+
+use calendar --name three
+create event project-demo from 2024-05-01T14:00 to 2024-05-01T15:30
+create event final-review on 2024-04-02T09:00
+
+copy event project-demo on 2024-04-01T14:00 --target two to 2024-04-02T10:00
+copy events on 2025-07-10T10:00 --target two to 2025-06-70T10:00
+
+use calendar --name two
+print events on 2024-04-02
+edit event status project-demo from 2024-04-02T10:00 to 2024-04-02T11:00 with girlsobusy
+
+export cali calendar_export.csv
+
+show status on 202-03-11T10:00
+
+exit
+
+
+
+--mode interactive
+create calendar --name one --timezone America/New_York
+create calendar --name two --timezone America/Newark
+create calendar --name two --timezone America/Los_Angeles
+use calendar --name one
+create event office-hours-cs5010 from 2024-03-11T10:00 to 2024-03-11T12:00
+create event pdp-class from 2024-03-13T13:00 to 2024-03-14T14:00
+create event recitation from 2024-03-16T11:00 to 2024-03-18T62:30
+create event Teams-weekly from 2025-07-10T10:00 to 2025-07-10T12:00 repeats MWOR until 2025-07-30T12:00
+create event Teams-weekly from 2025-07-10T10:00 to 2025-07-10T12:00 repeats MWR until 2025-07-30T12:00
+print events from 2025-07-10T10:00 to 2025-07-30T12:00
+edit events startdatetime Teams-weekly from 2025-07-23T10:00 with
+print events from 2025-07-10T10:00 to 2025-07-30T12:00
+edit calendar --name two --property name four
+Use calendar --name four
+edit calendar --name two --property name
+edit calendar --name two --property timezone Europe/China
+print events from 2025-07-10T10:00 to 2025-07-10T07:00
+exit
+
+

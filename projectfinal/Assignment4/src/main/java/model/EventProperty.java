@@ -1,0 +1,13 @@
+package model;
+/**
+ * CURRENLTY NOT IN USE FOR FUTURE DEV.
+ */
+
+public enum EventProperty {
+  EVENTNAME,
+  STARTTIMEDATE,
+  ENDTIMEDATE,
+  LONG_DESCRIPTION,
+  LOCATION,
+  EVENT_STATUS
+}

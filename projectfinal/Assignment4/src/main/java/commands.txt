@@ -1,0 +1,7 @@
+create event Test1 from 2025-03-03T12:00 to 2025-03-04T14:00
+create event Test2 from 2025-03-10T12:00 to 2025-03-11T14:00
+
+edit event eventname Test1 from 2025-03-03T12:00 to 2025-03-04T14:00 with Test21
+edit event eventname Test2 from 2025-03-10T12:00 to 2025-03-11T14:00 with Test22
+
+edit event eventname Test2 from 2025-03-10T12:00 to 2025-03-11T14:00 with

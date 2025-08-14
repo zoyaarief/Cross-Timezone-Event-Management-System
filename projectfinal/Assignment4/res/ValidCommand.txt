@@ -1,0 +1,89 @@
+--mode interactive
+create calendar --name one --timezone America/New_York
+create calendar --name two --timezone America/Los_Angeles
+
+use calendar --name one
+create event office-hours-cs5010 from 2024-03-11T10:00 to 2024-03-11T12:00
+create event pdp-class from 2024-03-13T13:00 to 2024-03-14T14:00
+create event recitation from 2024-03-16T11:00 to 2024-03-18T12:30
+
+use calendar --name two
+create event office-hours-cs5200 from 2024-03-11T15:00 to 2024-03-11T15:30
+create event dbms-class from 2024-03-13T13:00 to 2024-03-14T14:00
+create event recitation from 2024-03-16T11:00 to 2024-03-18T12:30
+
+copy events on 2024-03-11 --target one to 2021-03-11
+
+
+use calendar --name one
+print events on 2021-03-11
+print events from 2024-03-11T00:00 to 2024-03-18T23:59
+
+
+use calendar --name two
+edit calendar --name one --property timezone Europe/Paris
+print events on 2021-03-11
+
+edit calendar --name two --property name three
+
+use calendar --name three
+create event project-demo from 2024-05-01T14:00 to 2024-05-01T15:30
+create event final-review on 2024-04-02T09:00
+
+copy event project-demo on 2024-04-01T14:00 --target two to 2024-04-02T10:00
+
+use calendar --name two
+print events on 2024-04-02
+edit event name project-demo from 2024-04-02T10:00 to 2024-04-02T11:00 with demo-session
+
+export cal calendar_export.csv
+
+show status on 2024-03-11T10:00
+
+exit
+
+
+
+--mode interactive
+create calendar --name one --timezone America/New_York
+create calendar --name two --timezone America/Los_Angeles
+use calendar --name one
+create event office-hours-cs5010 from 2024-03-11T10:00 to 2024-03-11T12:00
+create event pdp-class from 2024-03-13T13:00 to 2024-03-14T14:00
+create event recitation from 2024-03-16T11:00 to 2024-03-18T12:30
+create event Teams-weekly from 2025-07-10T10:00 to 2025-07-10T12:00 repeats MWR until 2025-07-30T12:00
+print events from 2025-07-10T10:00 to 2025-07-30T12:00
+edit events location Teams-weekly from 2025-07-23T10:00 with London
+print events from 2025-07-10T10:00 to 2025-07-30T12:00
+edit calendar --name two --property name four
+edit calendar --name two --property timezone Europe/Paris
+print events from 2025-07-10T10:00 to 2025-07-30T12:00
+copy events on 2025-07-10T10:00 --target two to 2025-06-10T10:00
+exit
+
+
+--mode interactive
+create calendar --name one --timezone America/New_York
+create calendar --name two --timezone America/Los_Angeles
+create event office-hours-cs5010 from 2024-03-11T10:00 to 2024-03-11T12:00
+create event office-hours-cs50101 from 2024-03-12T15:00 to 2024-03-12T15:30
+copy events on 2024-03-11 --target one to 2021-03-11
+use calendar --name one
+print events on 2021-03-11
+use calendar --name two 
+edit calendar --name one --property timezone Europe/Paris
+Print events on  2021-03-11
+edit calendar --name two --property name three
+Use calendar --name three
+exit
+
+
+--mode interactive
+create calendar --name one --timezone America/New_York
+Create calendar --name two --timezone America/Los_Angeles
+Use calendar --name one
+create event office-hours-cs5010 from 2024-03-11T10:00 to 2024-03-11T12:00
+create event office-hours-cs4300 from 2024-03-12T10:00 to 2024-03-12T12:00
+Edit event
+print events on 2024-03-13
+Exit

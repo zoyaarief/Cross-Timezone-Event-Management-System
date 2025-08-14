@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Assignment4</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.17.2</version>
+                <extensions>true</extensions>
+                <configuration>
+<!--                    <excludedClasses>-->
+<!--                        &lt;!&ndash; you can list wildcards here &ndash;&gt;-->
+<!--                        <param>view.*</param>-->
+<!--                    </excludedClasses>-->
+                    <excludedTestClasses>
+                        <param>controller.CalendarControllerImplGuiTest</param>
+                        <param>controller.CalendarControllerImpleGuiTest</param>
+                    </excludedTestClasses>
+                    <targetTests>
+                        <param>*</param>
+                    </targetTests>
+<!--                    <excludedMethods>-->
+<!--                        <param>setView</param>-->
+<!--                        <param>goToNextMonth</param>-->
+<!--                        <param>goToPreviousMonth</param>-->
+<!--                        <param>onMonthChanged</param>-->
+<!--                        <param>newCalendarAdded</param>-->
+<!--                        <param>updateCalendarList</param>-->
+<!--                        <param>configureDefaultCalendar</param>-->
+<!--                        <param>useCalendar</param>-->
+<!--                    </excludedMethods>-->
+                    <targetClasses>
+                        <param>model.AvailabilityStatus</param>
+                        <param>model.EventModelImpl</param>
+                        <param>model.CalendarManager</param>
+                        <param>model.EventProperty</param>
+                        <param>model.CalendarModelCallback</param>
+                        <param>model.EventStatus</param>
+                        <param>model.CalenderModelImpl</param>
+                        <param>model.ICalenderModel</param>
+                        <param>model.EventIndex</param>
+                        <param>model.InvalidCalenderOperationException</param>
+                        <param>controller.CSVCalenderExporter</param>
+                        <param>controller.ICalendarGUIFeatures</param>
+                        <param>controller.CalenderControllerImpl</param>
+                        <param>controller.ICalenderController</param>
+                        <param>controller.CalenderExporter</param>
+                        <param>controller.IInputCommand</param>
+                        <param>controller.CopyCommand</param>
+                        <param>controller.InputParserHelper</param>
+                        <param>controller.CreateCommand</param>
+                        <param>controller.MiscCommand</param>
+                        <param>controller.EditCommand</param>
+                        <param>controller.PrintCommand</param>
+                        <param>view.CalenderViewImpl</param>
+                        <param>view.ICalenderView</param>
+                    </targetClasses>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
