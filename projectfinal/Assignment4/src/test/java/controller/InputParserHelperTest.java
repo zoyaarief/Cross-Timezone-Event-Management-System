@@ -50,6 +50,12 @@ public class InputParserHelperTest {
   }
 
   @Test
+  public void testDetermineCommandType_misc_import() {
+    assertEquals(InputParserHelper.CommandType.MISC,
+            helper.determineCommandType("import cal myfile.csv"));
+  }
+
+  @Test
   public void testDetermineCommandType_misc_showStatus() {
     assertEquals(InputParserHelper.CommandType.MISC,
             helper.determineCommandType("show status on 2025-01-01"));

@@ -67,6 +67,7 @@ public class InputParserHelper {
       return CommandType.COPY;
     }
     else if (command.startsWith("export cal") ||
+            command.startsWith("import cal") ||
             command.startsWith("show status on") ||
             command.startsWith("use")) {
       return CommandType.MISC;
