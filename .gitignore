@@ -1,0 +1,11 @@
+# Build output
+out/
+target/
+*.class
+*.jar
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store

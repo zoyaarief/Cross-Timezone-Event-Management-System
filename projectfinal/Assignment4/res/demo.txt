@@ -1,0 +1,13 @@
+create calendar --name work --timezone America/New_York
+create calendar --name london --timezone Europe/London
+use calendar --name work
+create event standup from 2025-07-07T09:00 to 2025-07-07T09:15 repeats MWF for 2 times
+create event design-review from 2025-07-08T14:00 to 2025-07-08T15:00
+create event overlapping-sync from 2025-07-08T14:30 to 2025-07-08T15:00
+edit events location standup Zoom
+print events on 2025-07-07
+show status on 2025-07-08T14:15
+copy events between 2025-07-07 and 2025-07-09 --target london to 2025-07-14
+use calendar --name london
+print events from 2025-07-14T00:00 to 2025-07-16T00:00
+exit
