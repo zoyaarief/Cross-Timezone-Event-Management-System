@@ -271,14 +271,14 @@ public class CalendarManagerTest {
   }
 
   @Test
-  public void testPrintlnInvokedOnCreateCalendar() throws InvalidCalenderOperationException {
+  public void testCreateCalendarDoesNotWriteToStdout() throws InvalidCalenderOperationException {
     // Capture the original System.out.
     PrintStream originalOut = System.out;
     ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
 
     try {
-      // Create a new calendar, which should trigger the println on line 69.
+      // The model reports through the controller and view, never directly.
       CalendarManager manager = new CalendarManager();
       manager.createCalendar("PrintTest", "America/New_York");
 
@@ -286,9 +286,7 @@ public class CalendarManagerTest {
       System.out.flush();
       String printedOutput = outContent.toString();
 
-      // Assert that the output contains the expected message.
-      assertTrue("Expected print statement not found",
-              printedOutput.contains("Calendar created: calendar manager"));
+      assertEquals("The model should not print", "", printedOutput);
     } finally {
       // Always restore the original System.out.
       System.setOut(originalOut);

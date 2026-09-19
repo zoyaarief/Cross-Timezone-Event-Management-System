@@ -66,7 +66,6 @@ public class CalendarManager {
     ICalenderModel newCalendar = new CalenderModelImpl(calName, zone);
     calendarMap.put(key, newCalendar);
     currentCalendar = newCalendar;
-    System.out.println("Calendar created: calendar manager" + newCalendar);
     if (callback != null) {
       callback.newCalendarAdded();
     }
