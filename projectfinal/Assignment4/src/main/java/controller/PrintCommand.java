@@ -39,6 +39,7 @@ public class PrintCommand implements IInputCommand {
           throws InvalidCalenderOperationException {
     Matcher matcher = PRINT_ON_PATTERN.matcher(command);
     if (matcher.find()) {
+      controller.printEvents(matcher.group(1));
       return;
     }
     matcher = PRINT_FROM_TO_PATTERN.matcher(command);

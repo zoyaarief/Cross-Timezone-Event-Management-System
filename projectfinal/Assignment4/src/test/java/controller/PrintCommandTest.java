@@ -42,10 +42,9 @@ public class PrintCommandTest {
           throws InvalidCalenderOperationException {
     String command = "print events on 2025-02-10";
     printCommand.parseAndExecute(command);
-    callLog.add("print events on 2025-02-10");
     assertEquals(1, callLog.size());
     String entry = callLog.get(0);
-    assertEquals("print events on 2025-02-10", entry);
+    assertEquals("printEventsOn(2025-02-10)", entry);
   }
 
   /**
